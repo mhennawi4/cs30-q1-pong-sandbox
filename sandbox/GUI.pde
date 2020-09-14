@@ -1,6 +1,32 @@
+void drawGame () {
+  background(200, 255, 255);
+  ellipse (ballX, ballY, ballSize, ballSize);
+  //paddles
+  fill(255, 51, 0);
+  rect(paddleXLeft, paddleYLeft, paddleWidth, paddleHeight);
+  fill(0, 0, 255);
+  rect(paddleXRight, paddleYRight, paddleWidth, paddleHeight);
+  fill(255, 255, 255);
+  //walls
+  rect(topWallX, topWallY, WallRectX, WallRectY);
+  rect(bottomWallX, bottomWallY,WallRectX , WallRectY);
+  //center line
+  rect(415, 30, 10, 40); 
+  rect(415, 80, 10, 40); 
+  rect(415, 130, 10, 40); 
+  rect(415, 180, 10, 40); 
+  rect(415, 230, 10, 40); 
+  rect(415, 280, 10, 40); 
+  rect(415, 330, 10, 40); 
+  rect(415, 380, 10, 40); 
+  rect(415, 430, 10, 40); 
+  rect(415, 480, 10, 40); 
+  //scoreboard
+  rect(scoreRightX, scoreY, scoreRectX, scoreRectY);
+  rect(scoreLeftX, scoreY, scoreRectX, scoreRectY);
+}
+
 void GUI_Starting () {
-  ellipse (ballStartPositionX,ballStartPositionY, ballSize, ballSize); //ball
-  rect( paddleYLeft, paddleYLeft, paddleWidth, paddleHeight); //left paddle
-  rect( paddleYRight, paddleYRight, paddleWidth, paddleHeight);
-  //rect(); /right paddle
+  drawGame ();
+  
 }

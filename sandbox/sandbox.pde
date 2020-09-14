@@ -1,15 +1,25 @@
-void setup() {
-  size(900, 600); 
-  screenChecker () ;
-  ProcessingSetup() ;
-}
+ 
 
-void draw() {
+void setup() {
+  size(850, 650);
+  screenChecker ();
+  ProcessingSetup ();
   GUI_Starting();
 }
 
-void KeyPressed() {
+void draw() {
+  ballMove ();
+  drawGame ();
 }
 
-void MousePressed() {
+void keyPressed () {
+  if (key == CODED && key == 'S' || key == 's') {
+    paddleYLeft = (paddleYLeft + paddleLeftUp) + 6.5;
+  }
+  if (key == CODED && key == 'W' || key == 'w') {
+  paddleYLeft = (paddleYLeft + paddleLeftUp) - 6.5;
+}
+}
+
+void mousePressed() {
 }
