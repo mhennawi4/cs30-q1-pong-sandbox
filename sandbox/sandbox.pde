@@ -10,6 +10,7 @@ void setup() {
 void draw() {
   ballMove ();
   drawGame ();
+   paddleMoveDraw (); 
 }
 
 void keyPressed () {

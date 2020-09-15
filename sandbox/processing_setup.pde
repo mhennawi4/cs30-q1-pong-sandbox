@@ -9,6 +9,8 @@ float paddleLeftUp, paddleRightUp, paddleLeftDown, paddleRightDown;
 float topWallY, bottomWallY;
 float topWallX, bottomWallX ,WallRectX, WallRectY;
 float scoreY, scoreRightX, scoreLeftX, scoreRectY, scoreRectX;
+Boolean paddleMoveLeftUp, paddleMoveLeftDown, paddleMoveRightUp, paddleMoveRightDown;
+
 
 void ProcessingSetup () {
 
