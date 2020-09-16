@@ -22,8 +22,11 @@ void drawGame () {
   rect(415, 430, 10, 40); 
   rect(415, 480, 10, 40); 
   //scoreboard
+  fill(255, 255, 255);
   rect(scoreRightX, scoreY, scoreRectX, scoreRectY);
   rect(scoreLeftX, scoreY, scoreRectX, scoreRectY);
+  
+  rect();
 }
 
 void GUI_Starting () {

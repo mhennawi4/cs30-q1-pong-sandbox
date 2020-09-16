@@ -12,7 +12,7 @@ float scoreY, scoreRightX, scoreLeftX, scoreRectY, scoreRectX;
 Boolean paddleMoveLeftUp, paddleMoveLeftDown, paddleMoveRightUp, paddleMoveRightDown;
 
 
-void ProcessingSetup () {
+void ProcessingSetup (){
 
   ballStartPositionX = width*1/2;
   ballStartPositionY = height*1/2;
@@ -29,7 +29,7 @@ void ProcessingSetup () {
   paddleXStartRight = width - netWidth - paddleWidth;
   paddleXRight = paddleXStartRight;
   paddleYLeft = height*1/2-paddleHeight*1/2;
-  paddleYRight = paddleYLeft;
+  paddleYRight = paddleYLeft ;
   //
   topWallY = (25);
   bottomWallY = (520);
@@ -52,8 +52,8 @@ void ProcessingSetup () {
   scoreLeftX = 0;
   scoreRectY = 125;
   scoreRectX = 150;
-  /*
-  resetY =
+ /*
+  resetY = 
   resetX =
   resetRectY =
   resetRectX =
