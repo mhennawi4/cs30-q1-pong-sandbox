@@ -1,6 +1,6 @@
+
 void createStars() {
-   int r = abs ( int (random(0-256))); // Truncate the decimal by casting
-    // random(256)
+   int r = abs ( int (random(0-256))); 
     int b = abs ( int (random(0-256)));
     int g = abs ( int (random(0-256)));
   fill(r,g,b);
@@ -9,6 +9,8 @@ void createStars() {
     float xRandom = random(diameterRandom*1/2, width-diameterRandom*1/2);
     float yRandom = random(diameterRandom*1/2, height-diameterRandom*1/2);
     stars[i] = new Star(xRandom, yRandom, diameterRandom);
-
+  if (radius + radius < diameter){
+  
+  }
   }
 }
