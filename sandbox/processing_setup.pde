@@ -10,6 +10,7 @@ float topWallY, bottomWallY;
 float topWallX, bottomWallX ,WallRectX, WallRectY;
 float scoreY, scoreRightX, scoreLeftX, scoreRectY, scoreRectX;
 Boolean paddleMoveLeftUp, paddleMoveLeftDown, paddleMoveRightUp, paddleMoveRightDown;
+float centerLine;
 
 
 void ProcessingSetup (){
@@ -31,27 +32,27 @@ void ProcessingSetup (){
   paddleYLeft = height*1/2-paddleHeight*1/2;
   paddleYRight = paddleYLeft ;
   //
-  topWallY = (25);
-  bottomWallY = (520);
+  topWallY = (650/26);
+  bottomWallY = (650/1.25);
   topWallX = (0);
   bottomWallX = (0);
-  WallRectX = (850);
-  WallRectY = (5);
+  WallRectX = (width);
+  WallRectY = (650/130);
 
 
   ballSpeedX = 1;
   ballSpeedY = 1;
 
-  paddleLeftUp = 1;
-  paddleRightUp = 1;
-  paddleLeftDown = 1;
-  paddleRightDown = 1;
+  paddleLeftUp = 1+1;
+  paddleRightUp = 1+1;
+  paddleLeftDown = 1+1;
+  paddleRightDown = 1+1;
 
-  scoreY = 525;
-  scoreRightX = 700;
+  scoreY = 650/1.238;
+  scoreRightX = (width-150/1);
   scoreLeftX = 0;
-  scoreRectY = 125;
-  scoreRectX = 150;
+  scoreRectY = 650/5.2;
+  scoreRectX = 150/1;
  /*
   resetY = 
   resetX =

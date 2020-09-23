@@ -11,6 +11,10 @@ void drawGame () {
   rect(topWallX, topWallY, WallRectX, WallRectY);
   rect(bottomWallX, bottomWallY,WallRectX , WallRectY);
   //center line
+ for (int i = 30; i < 520; i = i+50) {
+  rect(width*1/2, i, 10, 40);
+}
+    /*
   rect(415, 30, 10, 40); 
   rect(415, 80, 10, 40); 
   rect(415, 130, 10, 40); 
@@ -21,12 +25,13 @@ void drawGame () {
   rect(415, 380, 10, 40); 
   rect(415, 430, 10, 40); 
   rect(415, 480, 10, 40); 
+  */
   //scoreboard
   fill(255, 255, 255);
   rect(scoreRightX, scoreY, scoreRectX, scoreRectY);
   rect(scoreLeftX, scoreY, scoreRectX, scoreRectY);
   
-  rect();
+  //rect();
 }
 
 void GUI_Starting () {

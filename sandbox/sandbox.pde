@@ -1,7 +1,7 @@
 
 
 void setup() {
-  size(850, 650);
+  size(1250, 850);
   screenChecker ();
   ProcessingSetup ();
   GUI_Starting();
