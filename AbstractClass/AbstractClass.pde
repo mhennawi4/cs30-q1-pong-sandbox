@@ -10,6 +10,9 @@ shapes.add(rRGB);
 }
 
 void draw() {
+  background(0);
+  
+  shapes.get(i).draw();
 }
 
 abstract class Shape {
