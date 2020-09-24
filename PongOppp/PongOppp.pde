@@ -1,3 +1,9 @@
+// Global Variables
+// left and right paddles, ball, extraBalls[3], firework[25],
+// scores[2]
+// gameStart boolean, 
+// PFont font
+
 void setup() {
   size(500, 300); //fullScreen(), displayWidth & displayHeight
   // MISC: Landscape vs. portrait views, leads to screenSize Checker
@@ -33,8 +39,5 @@ void keyPressed () {
 }//End keyPressed()
 
 void mousePressed() { // Review mouseX and mouseY Key Variables and curser position input
-  // Easter Eggs for Advantage of player holding mouse
-  //
-  //
-  //
+  //Easter Eggs for Advantage of player holding mouse
 }//End mousePressed()
