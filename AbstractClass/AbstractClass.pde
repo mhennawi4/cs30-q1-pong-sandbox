@@ -4,6 +4,9 @@ void setup() {
   
   Rectangle rHex = new Rectangle (width*1/4, height*1/4, width*2/4, height*2/4, #0319FC);
   Rectangle rRGB = new Rectangle (width*3/5, height*3/5, width*1/5, height*1/5, color(random(255), random(255), random(255)) );
+
+shapes.add(rHex);
+shapes.add(rRGB);
 }
 
 void draw() {
