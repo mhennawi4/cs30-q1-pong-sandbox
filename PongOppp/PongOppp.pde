@@ -17,6 +17,7 @@ void setup() {
 
 void draw() {
   //Game Start Boolean and key press (SPACE Bar), IF Statement
+  //Game Start Boolean after score (SPACE Bar)
   //
   // Background
   // Class Shapes, drawShapes()

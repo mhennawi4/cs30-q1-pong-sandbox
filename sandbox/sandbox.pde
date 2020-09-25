@@ -1,38 +1,40 @@
-
+String reset;
+Boolean start = false; 
 
 void setup() {
-  size(1250, 850);
-  screenChecker ();
+  size(1050, 750); 
+  screenChecker (); 
   ProcessingSetup ();
-  GUI_Starting();
+  quitButtonSetup ();
+  scoreBoardSetup();
 }
 
-void draw() {
-  drawGame ();
-
-  paddleMoveDraw ();
-  ballMove ();
+void draw() { 
+  if (start == false) {
+    splashScreen ();
+  }
+  if (start == true) {
+    drawGame ();
+    quitButtonDraw();
+    paddleMoveDraw (); 
+    ballMove (); 
+    scoreBoardDraw();
+    println(regame, stop);
+    if (stop==true) {
+      reset = "Press R to restart Game";
+      textDraw(reset, quitFont, height, #FFFFFF, CENTER, CENTER, 0, height*1/2-height*1/20, width-1, height*1/10);
+      noLoop();
+    }
+  }
 }
 
-void keyPressed () {
-
-  if (key == CODED && key == 'S' || key == 's') {
-    paddleYLeft = (paddleYLeft + paddleLeftUp) + 6.5;
-  }
-  if (key == CODED && key == 'W' || key == 'w') {
-    paddleYLeft = (paddleYLeft + paddleLeftUp) - 6.5;
-  }
-
-if (key == CODED && keyCode == UP) {
-    paddleMoveRightUp = true;
-    paddleMoveRightDown = false;
-  }
-  if (key == CODED && keyCode == DOWN) {
-    paddleMoveRightUp = false;
-    paddleMoveRightDown = true;
-  }
-MoveKeys ();
+void keyPressed () { 
+  gameStart ();
+  paddleMoveControl (); 
+  quitButtonKeyPressed ();
+  restart(); 
 }
 
 void mousePressed() {
+  quitButtonMousePressed ();
 }

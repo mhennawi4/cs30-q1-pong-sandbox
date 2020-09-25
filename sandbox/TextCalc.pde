@@ -1,4 +1,4 @@
-/*
+
 void textSetup() {
   //printArray(fontList); //For listing all possible fonts to choose, then createFont
 }
@@ -49,4 +49,3 @@ float textCalculator(float size, String string, float rectWidth) {
   }
   return size; //Purpose of Calculator
 }
-*/
