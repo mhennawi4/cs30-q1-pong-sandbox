@@ -1,19 +1,26 @@
-Ball ball;
+Ball[] ball = new Ball[40];
 
 void setup() {
   size(500, 300);
-  ball = new Ball(width*1/2, height*1/4, width*1/8.3333);
+  for (int i=0; i<ball.length; i++) {
+    ball[i] = new Ball(width, height);
+    //width*1/2, height*1/4, width*1/15);
+  }
 }
 
 void draw () {
-  ball.step();
-  ball.draw();
+  background(0);
+  for (int i=0; i<ball.length; i++) {
+    ball[i].step();
+    ball[i].draw();
+  }
 }
-
 void keyPressed () {
 }
 
 void mousePressed () {
-  ball.targetX = mouseX;
-  ball.targetY = mouseY;
+  for (int i=0; i<ball.length; i++) {
+    ball[i].targetX = mouseX;
+    ball[i].targetY = mouseY;
+  }
 }
