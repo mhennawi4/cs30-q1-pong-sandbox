@@ -25,7 +25,7 @@ void screenChecker () { //Landscape vs. portraint mode
 void ProcessingSetup () {
   //
   ballStartPositionX = width*1/2;
-  ballStartPositionY = height*1/2;
+  ballStartPositionY = height/3;//255
   ballX = ballStartPositionX;
   ballY = ballStartPositionY;
   ballSize = width*0.02;
@@ -34,28 +34,28 @@ void ProcessingSetup () {
   netWidth = width*1/40;
   //
   paddleWidth = width*1/80;
-  paddleHeight = height*1/4;
+  paddleHeight = height*1/6;
   paddleXStartLeft = netWidth;
   paddleXLeft = paddleXStartLeft;
   paddleXStartRight = width - netWidth - paddleWidth;
   paddleXRight = paddleXStartRight;
-  paddleYLeft = height*1/2-paddleHeight*1/2;
+  paddleYLeft = 200;//1/2-paddleHeight*1/2;
   paddleYRight = paddleYLeft;
   //
-  ballSpeedX = 1;
-  ballSpeedY = 1;
+  ballSpeedX = 3;
+  ballSpeedY = 3;
   // 
   topWallY = (650/26);
-  bottomWallY = (650/1.25);
+  bottomWallY = (650/1.25);//gamefeild is 490
   topWallX = (0);
   bottomWallX = (0);
   WallRectX = (width);
   WallRectY = (650/130);
 //
-  paddleLeftUp = 1;
-  paddleRightUp = 1;
-  paddleLeftDown = 1;
-  paddleRightDown = 1;
+  paddleLeftUp = 2;
+  paddleRightUp = 2;
+  paddleLeftDown = 2;
+  paddleRightDown = 2;
   // 
   paddleMoveLeftUp = false;
   paddleMoveLeftDown = false;

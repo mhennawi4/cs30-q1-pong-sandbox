@@ -35,17 +35,17 @@ void ballMove () {
 
 void paddleMoveDraw () {
   //Checking if Paddle on the Screen
-  if (paddleYLeft <= height* 461/10000) {
-    paddleYLeft =   76923/1250000;
+  if (paddleYLeft <= height* 470/10000) {
+    paddleYLeft =   height* 480/10000;
   }
-  if (paddleYLeft >= height-paddleHeight) {
-    paddleYLeft = height-paddleHeight; 
+  if (paddleYLeft >= height* 12/27) {
+    paddleYLeft = height*12/28; 
   }
-  if (paddleYRight <= height* 461/10000 ) {
-    paddleYRight = 76923/1250000;
+  if (paddleYRight <= height* 470/10000 ) {
+    paddleYRight = height* 480/10000;
   }
-  if (paddleYRight >= height-paddleHeight) {//23/100
-    paddleYRight = height-paddleHeight;}
+  if (paddleYRight >= height*12/27) {//23/100
+    paddleYRight = height-416;}
   //Moving Paddle COde
   if (paddleMoveLeftUp == true) {
     paddleYLeft = paddleYLeft - paddleLeftUp;
