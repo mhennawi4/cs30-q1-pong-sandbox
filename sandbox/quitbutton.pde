@@ -4,7 +4,7 @@ PFont quitFont;
 color Blue, red, quitButtonColour, quitButtonColourHoverOver;
 
 void quitButtonSetup () {
-  quitFont = createFont ("ArialMT-48", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
+  quitFont = createFont ("ArialNarrow", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
   //
   quitButtonX = width*15/16;
   quitButtonY = height*0;

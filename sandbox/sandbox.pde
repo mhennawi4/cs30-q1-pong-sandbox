@@ -7,7 +7,7 @@ void setup() {
   ProcessingSetup ();
   quitButtonSetup ();
   scoreBoardSetup();
-   //StartButtonSetup ();
+   StartButtonSetup ();
 }
 
 void draw() { 
@@ -17,7 +17,7 @@ void draw() {
   if (start == true) {
     drawGame ();
     quitButtonDraw();
-    //StartButtonDraw();
+    StartButtonDraw();
     paddleMoveDraw (); 
     ballMove (); 
     scoreBoardDraw();
@@ -39,4 +39,5 @@ void keyPressed () {
 
 void mousePressed() {
   quitButtonMousePressed ();
+  StartButtonKeyPressed();
 }
