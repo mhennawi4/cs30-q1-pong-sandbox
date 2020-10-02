@@ -39,5 +39,5 @@ void keyPressed () {
 
 void mousePressed() {
   quitButtonMousePressed ();
-  StartButtonKeyPressed();
+  //StartButtonKeyPressed();
 }
