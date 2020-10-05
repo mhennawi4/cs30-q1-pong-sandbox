@@ -1,46 +1,86 @@
+private Paddle paddleLeft;
+private Paddle paddleRight;
+private Ball ball;
+public boolean paused = false;
+public boolean cheat = false;
+public boolean Menu = false;
+public boolean screen = true;
+public boolean DarkMode = false;
+public PFont f;
 
-void setup() {
-  size(1050, 600);
-  ball[0] = new Firework (width, height);
-  paddle[0] = new PaddlesClass (width, height, 0.05, 0); //Left Paddle
-  paddle[1] = new PaddlesClass (width, height, 0.95, 0.025); //Right Paddle
+public void setup() {
+  size(1050, 750);
+  ball = new Ball(width/2, height/2, 50);
+  ball.speedX = 13;
+  ball.speedY = random(-3,3);
+  paddleLeft = new Paddle(15, height/2, 30,200);
+  paddleRight = new Paddle(width-15, height/2, 30,200);
+  printArray(PFont.list());
+  f = createFont("OCR A Extended", 285);
+  textFont(f);
 }
 
-void draw() {
-  //ball
-  //ball[0].xSpeed is constantly passing through this main program
-  background(black);
-  //println(ball[0].xSpeed);
-  ball[0].xSpeed = ball[0].xSpeed * paddle[0].edgeDetection(ball[0].x, ball[0].y, ball[0].diameter);
-  ball[0].xSpeed = ball[0].xSpeed * ball[0].edgeDetection(ball[0].xSpeed);
-  ball[0].classDraw();
-  ball[0].move();
-  //paddle[1].();
-  //up and down needs to go into the class
-  paddle[0].movePaddle(paddle[0].up, paddle[0].down, height);
-  paddle[1].movePaddle(paddle[1].up, paddle[1].down, height);
-  paddle[0].classDraw();
-  paddle[1].classDraw();
+
+public void draw() {
+  background(0);
+  ball.move();
+  ball.display();
+  ball_movment();
+  collision();
+  paddle_movment();
+  paddleLeft.move();
+  paddleLeft.display();
+  paddleRight.move();
+  paddleRight.display();
+  scoreboard();
+  StartScreen();
+  }
+  
+public void keyPressed () {
+  if(keyCode == UP){
+    paddleRight.speedY=-7;
+  }
+  if(keyCode == DOWN){
+    paddleRight.speedY=7;
+  }
+  if(key == 'w'){
+    paddleLeft.speedY=-7;
+  }
+  if(key == 's'){
+    paddleLeft.speedY=7;
+  }
+  if(key == 'm') {
+    //Menu();
+  }
+  if(key == 'c'){
+  cheat = true;
+  }
+    if(key == 'v'){
+  cheat = false;
+  }
+    if(key == 'r'){
+  Reset();
+  }
+  paused();
 }
 
-void mousePressed() {
+public void keyReleased(){
+  if(keyCode == UP){
+    paddleRight.speedY=0;
+  }
+  if(keyCode == DOWN){
+    paddleRight.speedY=0;
+  }
+  if(key == 'w'){
+    paddleLeft.speedY=0;
+  }
+  if(key == 's'){
+    paddleLeft.speedY=0;
+  }
 }
-
-void keyPressed() {
-  if (key == CODED && key == 'W' || key == 'w') {
-    paddle[0].up = true;
-    paddle[0].down = false;
-  }
-  if (key == CODED && key == 'S' || key == 's') {
-    paddle[0].up = false;
-    paddle[0].down = true;
-  }
-  if (key == CODED && keyCode == UP) {
-    paddle[1].up = true;
-    paddle[1].down = false;
-  }
-  if (key == CODED && keyCode == DOWN) {
-    paddle[1].up = false;
-    paddle[1].down = true;
+void mousePressed () {
+  if (mousePressed == true) {
+  StartScreen = false;
+  loop();
   }
 }

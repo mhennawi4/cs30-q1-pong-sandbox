@@ -1,63 +1,43 @@
-class PaddlesClass {
-  float x;
-  float y;
-  float rectWidth;
-  float rectHeight;
-  float yMove;
-  Boolean up;
-  boolean down;
+public class Paddle{
 
-  PaddlesClass (float parameterWidth, float parameterHeight, float locationRatio, float shift) {
-    // locationRatio must be decimal, trunction
-    rectWidth = parameterWidth/40;
-    rectHeight = parameterHeight/4;
-    this.x = (parameterWidth * locationRatio) - parameterWidth*shift;
-    this.y = (parameterHeight/2) - rectHeight/2;
-    yMove = parameterHeight/parameterHeight; //"1 Pixel at a time"
-    this.up = false;
-    this.down = false;
+ private float x;
+ private float y;
+ final private float w;
+ final private float h;
+ private float speedY;
+ private float speedX;
+ final private color c;
+  
+  Paddle(float tempX, float tempY, float tempW, float tempH){
+    x = tempX;
+    y = tempY;
+    w = tempW;
+    h = tempH;
+    speedY = 0;
+    speedX = 0;
+    c=(255);
   }
 
-  // Procedures
-
-  float edgeDetection(float ballX, float ballY, float ballDiamter) {
-    float bounceXtop = x;
-    float bounceYtop = y;
-    //float bounceXbottom = x;
-    float bounceYbottom = y+rectHeight;
-    //println(bounceXtop);
-    if ( ballX<=bounceXtop+rectWidth+ballDiamter/2 ) {
-      if (ballY >= bounceYtop && ballY <= bounceYbottom) {
-        return -1;
-      }
-    }
-    return 1;
+   private void move(){
+    y += speedY;
+    x += speedX;
   }
 
-  void movePaddle(Boolean up, Boolean down, float height) {
-    //up
-    if (up == true && down == false) {
-      y = y - yMove;
-    }
-    //down
-    if (up == false && down == true) {
-      y = y + yMove;
-    }
-    up = false;
-    down = false;
-    if (y < 0) {
-      y = 0;
-    }
-    if (y > height-rectHeight) {
-      y = height-rectHeight;
-    }
+   private void display(){
+    fill(c);
+    rect(x-w/2,y-h/2,w,h);
+  } 
+  
+  float left(){
+    return x-w/2;
   }
-
-
-  void classDraw() {
-    rect(x, y, rectWidth, rectHeight);
+  float right(){
+    return x+w/2;
   }
-
-
-  // Getters and Setters
+  float top(){
+    return y-h/2;
+  }
+  float bottom(){
+    return y+h/2;
+  }
 }
