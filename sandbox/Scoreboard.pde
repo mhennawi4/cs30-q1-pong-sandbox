@@ -11,8 +11,8 @@ void scoreBoardDraw() {
   fill(0);
   score1 = Integer.toString(player1);
   score2 = Integer.toString(player2);
-  textDraw(score1, quitFont, height, #000000, CENTER, CENTER, 20 , 230 , width*1/15, height*90/100);
-  textDraw(score2, quitFont, height, #000000, CENTER, CENTER, 940, 230, width*1/15, height*9/10);
+  textDraw(score1, quitFont, height, #000000, CENTER, CENTER, 20 , 230 , width*1/10, height*90/100);
+  textDraw(score2, quitFont, height, #000000, CENTER, CENTER, 940, 230, width*1/10, height*9/10);
 }
 
 void restart() {

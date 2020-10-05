@@ -1,6 +1,6 @@
 void drawGame () {
   background(0,0,0);
-  fill(#460046);
+  fill(255);
   ellipse (ballX, ballY, ballSize, ballSize);
   //paddles
   fill(255, 51, 0);

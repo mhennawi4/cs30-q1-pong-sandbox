@@ -7,7 +7,7 @@ void setup() {
   ProcessingSetup ();
   quitButtonSetup ();
   scoreBoardSetup();
-   StartButtonSetup ();
+  // StartButtonSetup ();
 }
 
 void draw() { 
@@ -17,14 +17,14 @@ void draw() {
   if (start == true) {
     drawGame ();
     quitButtonDraw();
-    StartButtonDraw();
+    //StartButtonDraw();
     paddleMoveDraw (); 
     ballMove (); 
     scoreBoardDraw();
     println(regame, stop);
     if (stop==true) {
-      reset = "Press R to restart Game";
-      textDraw(reset, quitFont, height, #FFFFFF, CENTER, CENTER, 0, height*1/2-height*1/20, width-1, height*1/10);
+      reset = "Press R To Restart!!!";
+      textDraw(reset, quitFont, height, #FFFFFF, CENTER, CENTER, 0, height*22/30-height*1/20, width-1, height*1/10);
       noLoop();
     }
   }

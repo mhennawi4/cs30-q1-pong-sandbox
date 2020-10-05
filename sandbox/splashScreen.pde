@@ -16,7 +16,7 @@ void splashScreen () {
   textDraw(startButton,quitFont, height, 0, CENTER, CENTER,0, 750-450, width-1, height*1/10);
 }
 
-void StartButtonSetup () {
+/*void StartButtonSetup () {
  //
  StartFont = createFont ("ArialMT-48", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
  //
@@ -55,5 +55,5 @@ if (mouseX>=width*1/2-60 && mouseX<=width*1/2+60 && mouseY>=313 && mouseY <=373)
  exit();
  }
  }
- 
+ */
  
