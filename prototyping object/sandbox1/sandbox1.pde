@@ -1,6 +1,9 @@
 private Paddle paddleLeft;
 private Paddle paddleRight;
 private Ball ball;
+private Wall wallTop;
+private Wall wallBottom;
+private CenterLine centerline;
 public boolean paused = false;
 public boolean cheat = false;
 public boolean Menu = false;
@@ -10,11 +13,17 @@ public PFont f;
 
 public void setup() {
   size(1050, 750);
-  ball = new Ball(width/2, height/2, 50);
-  ball.speedX = 13;
+  ball = new Ball(width/2, height/2, 25);
+  ball.speedX = 12;
   ball.speedY = random(-3,3);
-  paddleLeft = new Paddle(15, height/2, 30,200);
-  paddleRight = new Paddle(width-15, height/2, 30,200);
+  paddleLeft = new Paddle(15, height/2, 15,150);
+  paddleRight = new Paddle(width-15, height/2, 15,150);
+  wallTop = new Wall(0, 650/26 , width, 650/130);
+  wallBottom = new Wall(0, 650/1.25, width, 650/130);
+  centerline = new CenterLine for (int i = 30; i < 520; i = i+50) {
+  rect(width*1/2, i, 10, 40);
+}
+
   printArray(PFont.list());
   f = createFont("OCR A Extended", 285);
   textFont(f);
@@ -34,6 +43,8 @@ public void draw() {
   paddleRight.display();
   scoreboard();
   StartScreen();
+  wallTop.display();
+  wallBottom.display();
   }
   
 public void keyPressed () {

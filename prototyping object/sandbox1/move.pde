@@ -1,35 +1,35 @@
 private void ball_movment() {
-  if (ball.right() > width) { //if stuff between () is true, execute code between {}
+  if (ball.right() > width) { 
     ball.speedX = -ball.speedX;
   }
   if (ball.left() < 0) {
     ball.speedX = -ball.speedX;
   }
 
-  if (ball.bottom() > height) {
+  if (ball.bottom() > 650/1.25) {
     ball.speedY = -ball.speedY;
   }
 
-  if (ball.top() < 0) {
+  if (ball.top() < 650/26) {
     ball.speedY = -ball.speedY;
   }
  }
 
  private void paddle_movment() {
-  if (paddleLeft.bottom() > height) {
-    paddleLeft.y = height-paddleLeft.h/2;
+  if (paddleLeft.bottom() > 650/1.25) {
+    paddleLeft.y = 648/1.25-paddleLeft.h/2;
   }
 
-  if (paddleLeft.top() < 0) {
-    paddleLeft.y = paddleLeft.h/2;
+  if (paddleLeft.top() < 35) {
+    paddleLeft.y = 35+paddleLeft.h/2;
   }
     
-  if (paddleRight.bottom() > height) {
-    paddleRight.y = height-paddleRight.h/2;
+  if (paddleRight.bottom() > 650/1.25) {
+    paddleRight.y = 648/1.25-paddleRight.h/2;
   }
 
-  if (paddleRight.top() < 0) {
-    paddleRight.y = paddleRight.h/2;
+  if (paddleRight.top() < 35) {
+    paddleRight.y = 35+paddleRight.h/2;
   }
 }
 

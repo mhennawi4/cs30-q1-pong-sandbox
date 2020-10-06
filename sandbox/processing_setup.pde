@@ -47,8 +47,8 @@ void ProcessingSetup () {
   // 
   topWallY = (650/26);
   bottomWallY = (650/1.25);//gamefeild is 490
-  topWallX = (0);
-  bottomWallX = (0);
+  topWallX = (0); //rect(topWallX, topWallY, WallRectX, WallRectY);
+  bottomWallX = (0); //  rect(bottomWallX, bottomWallY,WallRectX , WallRectY);
   WallRectX = (width);
   WallRectY = (650/130);
 //
