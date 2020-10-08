@@ -1,4 +1,4 @@
-class Scoreboard {
+public class Scoreboard {
   float x;
   float y;
   float rectWidth;
@@ -18,11 +18,10 @@ void scoreBoardSetup() {
 }
 
 void scoreBoardDraw() {
-  fill(0);
+  fill(255);
   score1 = Integer.toString(player1);
   score2 = Integer.toString(player2);
-  //textDraw(score1, quitFont, height, #000000, CENTER, CENTER, 20 , 230 , width*1/15, height*90/100);
- // textDraw(score2, quitFont, height, #000000, CENTER, CENTER, 940, 230, width*1/15, height*9/10);
+
 }
 
 void restart() {

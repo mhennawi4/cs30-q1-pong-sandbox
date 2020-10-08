@@ -6,6 +6,7 @@ private Wall wallBottom;
 private CenterLine centerline;
 public boolean paused = false;
 public boolean cheat = false;
+public boolean cheat2 = false;
 public boolean Menu = false;
 public boolean screen = true;
 public boolean DarkMode = false;
@@ -14,7 +15,7 @@ public PFont f;
 public void setup() {
   size(1050, 750);
   ball = new Ball(width/2, height/2, 25);
-  ball.speedX = 3;
+  ball.speedX = random(4, 6);
   quitButtonSetup ();
   ball.speedY = random(-3, 3);
   paddleLeft = new Paddle(15, height/2, 15, 150);
@@ -24,14 +25,14 @@ public void setup() {
   for (int i = 30; i < 520; i = i+50) {
     centerline = new CenterLine(width*1/2, i, 10, 40);
   }
-  printArray(PFont.list());
+  //printArray(PFont.list());
   f = createFont("Arial Black", 285);
   textFont(f);
 }
 
 
 public void draw() {
-  background(#03FADB);
+  background(0);
   ball.move();
   ball.display();
   quitButtonDraw();
@@ -41,12 +42,13 @@ public void draw() {
   paddleLeft.move();
   paddleLeft.display();
   paddleRight.move();
-  centerline.display();
+  
   paddleRight.display();
+  wallTop.display();
+  centerline.display();
+  wallBottom.display();
   scoreboard();
   StartScreen();
-  wallTop.display();
-  wallBottom.display();
 }
 
 public void keyPressed () {
@@ -68,6 +70,12 @@ public void keyPressed () {
   if (key == 'c') {
     cheat = true;
   }
+  if (key == 'j') {
+    cheat2 = true;
+  }
+  if (key == 'm') {
+    cheat2 = false;
+  }
   if (key == 'v') {
     cheat = false;
   }
@@ -82,8 +90,6 @@ void mousePressed () {
   if (mousePressed == true) {
     StartScreen = false;
     loop();
-    
   }
-    quitButtonMousePressed ();
-
+  quitButtonMousePressed ();
 }

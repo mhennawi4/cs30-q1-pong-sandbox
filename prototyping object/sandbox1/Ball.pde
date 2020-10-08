@@ -1,3 +1,4 @@
+  
 public class Ball {
   private float x;
   private float y;
@@ -21,7 +22,8 @@ public class Ball {
     y = y + speedY;
     x = x + speedX;
     if(mousePressed == true) {
-    aimBot();
+    autoScore();
+    fastBall();
     }
   }
   
@@ -43,6 +45,7 @@ public class Ball {
   float bottom(){
     return y+diameter/2;
   }
+ 
 }
 
 public void screenChecker () {

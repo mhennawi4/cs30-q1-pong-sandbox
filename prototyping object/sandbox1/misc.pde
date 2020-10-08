@@ -4,6 +4,7 @@ String endScreen1 = "Red Wins";
 String endScreen2 = "Blue Wns";
 boolean StartScreen = true;
 void scoreboard() {
+  fill(255);
   textSize(40);
   textAlign(CENTER);
   text(scoreRight, width/1.05, height-150);
@@ -12,6 +13,13 @@ void scoreboard() {
     scoreLeft = scoreLeft + 1;
     ball.x = width/2;
     ball.y = height/2;
+     text("X", 0, 0,width*15/16,5);
+  /*
+  quitButtonX = width*15/16;
+  quitButtonY = height*0;
+  quitButtonWidth = width*1/16;
+  quitButtonHeight = height*1/30;
+  */
 }
   if (ball.left() < 0) {
     scoreRight = scoreRight + 1;
@@ -23,9 +31,11 @@ void scoreboard() {
   //rect(0, 0, 1366, 768);
   textSize(100);
   textAlign(CENTER, CENTER);
-  textFont(f, 55);
+  textFont(f, 40);
   fill(#0000FF);
-  text("Blue Wins", 0, 0, 1000, 600);
+   text("Right Wins", 0, 0, 1100, 1150);
+  fill(255);
+  text("Press R to retart", 0, 0, 1100, 1250);
   noLoop();
 }
     if(scoreLeft == 7){
@@ -33,9 +43,11 @@ void scoreboard() {
   //rect(0, 0, 1366, 768);
   textSize(100);
   textAlign(CENTER, CENTER);
-  textFont(f, 55);
+  textFont(f, 40);
   fill(#FF0000);
-  text("Red Wins", 0, 0, 1000, 600);
+  text("Left Wins", 0, 0, 1100, 1150);
+  fill(255);
+  text("Press R to retart", 0, 0, 1100, 1250);
   noLoop();
   }
 }
@@ -47,10 +59,10 @@ if (StartScreen == true) {
   textSize(80);
   textAlign(CENTER, CENTER);
   textFont(f, 55);
-  fill(random(225), random(225), random(225));
+  fill(225);
   text("Welcome to mahmoud's pong", CENTER, CENTER, CENTER, CENTER);
-  textSize(20);
-  text("Click Screen To Start", width*1/3, height*1/2, width*1/3, 200);
+  textSize(30);
+  text("Click Screen To Start", width*1/4, height*1/2, width*1/2, 50);
   noLoop();
   }
 }
