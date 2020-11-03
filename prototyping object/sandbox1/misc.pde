@@ -3,6 +3,8 @@ int scoreRight = 0;
 String endScreen1 = "Red Wins";
 String endScreen2 = "Blue Wns";
 boolean StartScreen = true;
+
+
 void scoreboard() {
   fill(255);
   textSize(40);
@@ -52,6 +54,8 @@ void scoreboard() {
   }
 }
 
+
+
 void StartScreen() {
 if (StartScreen == true) {
   fill(0);
@@ -62,11 +66,11 @@ if (StartScreen == true) {
   fill(225);
   text("Welcome to mahmoud's pong", CENTER, CENTER, CENTER, CENTER);
   textSize(30);
-  text("Click Screen To Start", width*1/4, height*1/2, width*1/2, 50);
+  text("Click Screen To Start", width*1/4, height*2/5, width*1/2, 50);
+  text("click -U- or -J- and use mouse for secret ", width*1/4, height*2.5/5, width*1/2, 50);
+    text("First to 7 wins ", width*1/4, height*3/5, width*1/2, 50);
+
+
   noLoop();
   }
-}
-
-void DarkMode() {
-
 }

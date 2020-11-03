@@ -32,7 +32,7 @@ public void setup() {
 
 
 public void draw() {
-  background(0);
+ background(0);
   ball.move();
   ball.display();
   quitButtonDraw();
@@ -67,7 +67,7 @@ public void keyPressed () {
   if (key == 'm') {
     //Menu();
   }
-  if (key == 'c') {
+  if (key == 'u') {
     cheat = true;
   }
   if (key == 'j') {
