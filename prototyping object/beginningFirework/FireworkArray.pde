@@ -12,7 +12,7 @@ class Firework {
     this.x = mouseX; //width*1/2
     this.y = mouseY; //height*1/2
     this.RandomColour = int (random(2));
-     color = 
+     colour = (#FF0000);
      if (RandomColour < 1) {
       color(#030CFF);
     } else { 

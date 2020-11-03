@@ -1,5 +1,5 @@
 
-Firework[] firework = new Firework[25]; 
+Firework[] firework = new Firework[20]; 
 
 void setup() {
   size(500, 400); 
@@ -10,7 +10,7 @@ void setup() {
 }
 
 void draw() {
-  //background(0);
+  background(0);
   //
   for (int i=0; i<firework.length; i++) {
     firework[i].step();

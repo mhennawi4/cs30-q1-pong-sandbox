@@ -1,6 +1,7 @@
 private Paddle paddleLeft;
 private Paddle paddleRight;
 private Ball ball;
+Firework[] firework = new Firework[20]; 
 private Wall wallTop;
 private Wall wallBottom;
 private CenterLine centerline;
@@ -18,6 +19,9 @@ public void setup() {
   ball.speedX = random(4, 6);
   quitButtonSetup ();
   ball.speedY = random(-3, 3);
+   for (int i=0; i<firework.length; i++) {
+    firework[i] = new Firework(width, height);
+  }
   paddleLeft = new Paddle(15, height/2, 15, 150);
   paddleRight = new Paddle(width-15, height/2, 15, 150);
   wallTop = new Wall(0, 650/26, width, 650/130);
@@ -42,7 +46,11 @@ public void draw() {
   paddleLeft.move();
   paddleLeft.display();
   paddleRight.move();
-  
+  for (int i=0; i<firework.length; i++) {
+    firework[i].step();
+    firework[i].bounce();
+    firework[i].draw();
+  }
   paddleRight.display();
   wallTop.display();
   centerline.display();
@@ -90,6 +98,9 @@ void mousePressed () {
   if (mousePressed == true) {
     StartScreen = false;
     loop();
+  }
+  for (int i=0; i<firework.length; i++) {
+    firework[i] = new Firework(width, height);
   }
   quitButtonMousePressed ();
 }
