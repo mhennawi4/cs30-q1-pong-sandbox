@@ -1,76 +1,79 @@
 
-class MergeSort {
+private static void printArray(int[] ar) {
+  for (int i : ar) {
+    System.out.print(i + " ");
+  }
+  System.out.println();
+}
 
-  void merge(int arr[], int p, int q, int r) {
+private static int[] mergeSort(int[] ar) {
 
-    int n1 = q - p + 1;
-    int n2 = r - q;
+  if (ar.length <= 1) {
+    return ar;
+  }
+  
+  int midpoint = ar.length / 2;
+  int[] left = new int[midpoint];
+  int[] right;
 
-    int L[] = new int[n1];
-    int M[] = new int[n2];
+  if (ar.length % 2 == 0) {
+    right = new int[midpoint];
+  } else {
+    right = new int[midpoint + 1];
+  }
 
-    for (int i = 0; i < n1; i++)
-      L[i] = arr[p + i];
-    for (int j = 0; j < n2; j++)
-      M[j] = arr[q + 1 + j];
+  for (int i = 0; i < midpoint; i++) {
+    left[i] = ar[i];
+  }
 
-    int i, j, k;
-    i = 0;
-    j = 0;
-    k = p;
+  for (int j = 0; j < right.length; j++) {
+  right[j] = ar[midpoint + j];
+}
 
- 
-    while (i < n1 && j < n2) {
-      if (L[i] <= M[j]) {
-        arr[k] = L[i];
-        i++;
+  int[] result = new int[ar.length];
+
+  left = mergeSort(left);
+  right = mergeSort(right);
+  result = merge(left, right);
+
+  // below return will be changed
+  return result;
+
+}
+
+private static int[] merge(int[] left, int[] right) {
+
+  int[] result = new int[left.length + right.length];
+  int leftPointer, rightPointer, resultPointer;
+  leftPointer = rightPointer = resultPointer = 0;
+
+  while (leftPointer < left.length || rightPointer < right.length) {
+    if (leftPointer < left.length && rightPointer < right.length) {
+      if (left[leftPointer] < right[rightPointer]) {
+        result[resultPointer++] = left[leftPointer++];
       } else {
-        arr[k] = M[j];
-        j++;
+        result[resultPointer++] = right[rightPointer++];
       }
-      k++;
-    }
-
-   
-    while (i < n1) {
-      arr[k] = L[i];
-      i++;
-      k++;
-    }
-
-    while (j < n2) {
-      arr[k] = M[j];
-      j++;
-      k++;
+    } 
+    else if (leftPointer < left.length) {
+      result[resultPointer++] = left[leftPointer++];
+    } else if (rightPointer < right.length) {
+      result[resultPointer++] = right[rightPointer++];
     }
   }
 
-  void mergeSort(int arr[], int l, int r) {
-    if (l < r) {
+  return result;
+}
 
-      int m = (l + r) / 2;
+public static void main(String[] args) {
 
-      mergeSort(arr, l, m);
-      mergeSort(arr, m + 1, r);
+  int[] array = { 10, 20, 9 , 7, 8, 3, 2, 1, 1 };
+  // 10, 20, 9 , 7, 8, 3, 2, 1, 1
+  System.out.println("original");
+  printArray(array);
 
-      merge(arr, l, m, r);
-    }
-  }
+  array = mergeSort(array);
+  System.out.println("after sorting");
+  printArray(array);
 
-   void printArray(int arr[]) {
-    int n = arr.length;
-    for (int i = 0; i < n; ++i)
-      System.out.print(arr[i] + " ");
-    System.out.println();
-  }
-
-  public void main(String args[]) {
-    int arr[] = { 6, 5, 12, 10, 9, 1 };
-
-    MergeSort ob = new MergeSort();
-    ob.mergeSort(arr, 0, arr.length - 1);
-
-    System.out.println("Sorted array:");
-    printArray(arr);
-  }
 }
